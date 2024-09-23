@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =============== Link Boxicon =============== -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+
+    <!-- =============== Swiper Css =============== -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!-- =============== Css =============== -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/colors/color-1.css">
+
+    <title>Book SleepWalker</title>
+</head>
+
+<body>
+    <!-- =============== Header =============== -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">
+                <i class="bx bxs-book-reader nav__logo-icon"></i> Book Sleepwalker
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link ">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="shop.html" class="nav__link active-link">Shop</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="cart.html" class="nav__link">Cart</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="about.html" class="nav__link">About Us</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="contact.html" class="nav__link">Contact Us</a>
+                    </li>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class="bx bx-x"></i>
+                </div>
+            </div>
+
+            <div class="nav__btns">
+                <div class="login__toggle" id="login-toggle">
+                    <i class="bx bx-user"></i>
+                </div>
+
+                <div class="nav__shop" id="cart-shop">
+                    <i class="bx bx-shopping-bag"></i>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-grid-alt'></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- =============== Cart =============== -->
+    <div class="cart " id="cart">
+        <i class="bx bx-x cart__close" id="cart-close"></i>
+
+        <h2 class="cart__title-center">My Cart</h2>
+
+        <div class="cartcontainer">
+            <article class="cart__card">
+                <div class="cart__box">
+                    <img src="/assets/image/cart1.jpg" alt="" class="cart_img">
+                </div>
+
+                <div class="cart__details">
+                    <h3 class="cart_title">รุ่นน้องตัวป่วนอยากชวนเที่ยวเล่น เล่ม 08</h3>
+                    <span class="cart_price">฿76.00</span>
+
+                    <div class="cart__amount">
+                        <div class="cart__amount-content">
+                            <span class="cart__amount-box">
+                                <i class="bx bx-minus"></i>
+                            </span>
+
+                            <span class="cart__amount-number">1</span>
+
+                            <span class="cart__amount-box"></span>
+                            <i class="bx bx-plus"></i>
+                            </span>
+
+                        </div>
+
+                        <i class="bx bx-trash-alt cart__amount-trash"></i>
+                    </div>
+                </div>
+            </article>
+
+            <article class="cart__card">
+                <div class="cart__box">
+                    <img src="/assets/image/cart2.jpg" alt="" class="cart_img">
+                </div>
+
+                <div class="cart__details">
+                    <h3 class="cart_title">ทาสสุดแกร่งแห่งหน่วยป้องกันอสูร slave เล่ม 14 </h3>
+                    <span class="cart_price">฿149.00</span>
+
+                    <div class="cart__amount">
+                        <div class="cart__amount-content">
+                            <span class="cart__amount-box">
+                                <i class="bx bx-minus"></i>
+                            </span>
+
+                            <span class="cart__amount-number">1</span>
+
+                            <span class="cart__amount-box"></span>
+                            <i class="bx bx-plus"></i>
+                            </span>
+
+                        </div>
+
+                        <i class="bx bx-trash-alt cart__amount-trash"></i>
+                    </div>
+                </div>
+            </article>
+
+            <article class="cart__card">
+                <div class="cart__box">
+                    <img src="/assets/image/cart3.jpg" alt="" class="cart_img">
+                </div>
+
+                <div class="cart__details">
+                    <h3 class="cart_title">สองสิงห์อมควันหลังซูเปอร์มาร์เก็ต เล่ม 3 </h3>
+                    <span class="cart_price">฿159.00</span>
+
+                    <div class="cart__amount">
+                        <div class="cart__amount-content">
+                            <span class="cart__amount-box">
+                                <i class="bx bx-minus"></i>
+                            </span>
+
+                            <span class="cart__amount-number">1</span>
+
+                            <span class="cart__amount-box"></span>
+                            <i class="bx bx-plus"></i>
+                            </span>
+
+                        </div>
+
+                        <i class="bx bx-trash-alt cart__amount-trash"></i>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="cart__prices">
+            <span class="cart__prices-item">3 item</span>
+            <span class="cart__prices-total">Total 383฿</span>
+        </div>
+    </div>
+
+    <!-- =============== Fake Login =============== -->
+    <div class="login" id="login">
+        <i class="bx bx-x login__close" id="login-close"></i>
+
+        <h2 class="login__title-center">Login</h2>
+
+        <form action="" class="login__form grid">
+            <div class="login__content">
+                <label for="" class="login__lable">Email</label>
+                <input type="text" class="login__input">
+            </div>
+
+            <div class="login__content">
+                <label for="" class="login__lable">Password</label>
+                <input type="password" class="login__input">
+            </div>
+            <div>
+                <a href="#" class="button">Sign in</a>
+            </div>
+
+            <div>
+                <p class="signup">Not a member?
+                    <a href="register.html">SignUp Now!</a>
+                </p>
+            </div>
+        </form>
+    </div>
+    <!-- =============== Main =============== -->
+    <main class="main">
+        <section class="shop section container">
+            <h2 class="breadcrumb__title">Shop Page</h2>
+            <h3 class="breadcrumb__subtitle">Home > <span>Shop</span></h3>
+        </section>
+    </main>
+    <!-- =============== Footer =============== -->
+    <footer class="footer section">
+        <div class="footer__container container grid">
+            <!-- =============== Footer Content1 =============== -->
+            <div class="footer__content">
+                <a href="#" class="footer__logo">
+                    <i class="bx bxs-book-reader footer__logo-icon"></i> Book SleepWalker
+                </a>
+
+                <p class="footer__description">แหล่งรวมหนังสือคุณภาพ <br> ส่งตรงจากณี่ปุ่น </p>
+
+                <ul class="footer__social">
+                    <a href="#" class="footer__social-link"><i class="bx bxl-facebook"></i></a>
+                    <a href="#" class="footer__social-link"><i class="bx bxl-youtube"></i></a>
+                    <a href="#" class="footer__social-link"><i class="bx bxl-twitter"></i></a>
+                    <a href="#" class="footer__social-link"><i class="bx bxl-instagram"></i></a>
+                </ul>
+            </div>
+            <!-- =============== Footer Content2 =============== -->
+            <div class="footer__content">
+                <h3 class="footer__title">About</h3>
+
+                <ul class="footer__links">
+                    <li><a href="#" class="footer__link">เกี่ยวกับพวกเรา</a></li>
+                    <li><a href="#" class="footer__link">ศูนย์บริการลูกค้่า</a></li>
+                    <li><a href="#" class="footer__link">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- =============== Footer Content3 =============== -->
+            <div class="footer__content">
+                <h3 class="footer__title">ผู้สนับสนุนของพวกเรา</h3>
+
+                <ul class="footer__links">
+                    <li><a href="https://www.firstpagepro.com/" class="footer__link">First Page Pro</a></li>
+                    <li><a href="https://www.phoenixnext.com/?srsltid=AfmBOoojTBIEDl5uqASlLhggw35jl0_dQwyL7SspkXsNY2WceWwjmKgH"
+                            class="footer__link">Phoenix Next</a></li>
+                    <li><a href="https://www.luckpim.com/" class="footer__link">Luck Pim</a></li>
+                </ul>
+            </div>
+
+            <!-- =============== Footer Content4 =============== -->
+            <div class="footer__content">
+                <h3 class="footer__title">Service</h3>
+
+                <ul class="footer__links">
+                    <li><a href="#" class="footer__link">Chat Us</a></li>
+                    <li><a href="#" class="footer__link">Contact Us</a></li>
+                    <li><a href="#" class="footer__link"></a></li>
+                </ul>
+            </div>
+
+        </div>
+        <span class="footer__copy">
+            <p>&copy; 2024 Book SleepWalker. All rights reserved.</p>
+        </span>
+    </footer>
+
+    <!-- ===============Scroll Up =============== -->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="bx bx-up-arrow-alt scrollup__icon"></i>
+    </a>
+
+    <!-- =============== Swiper Js =============== -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!-- =============== Main Js =============== -->
+    <script src="assets/js/main.js"></script>
+
+
+</body>
+
+</html>

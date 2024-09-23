@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =============== Link Boxicon =============== -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+
+    <!-- =============== Swiper Css =============== -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!-- =============== Css =============== -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/colors/color-1.css">
+
+    <title>Book SleepWalker</title>
+</head>
+
+<body>
+
+    <!-- =============== Header =============== -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">
+                <i class="bx bxs-book-reader nav__logo-icon"></i> Book Sleepwalker
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link active-link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="shop.html" class="nav__link">Shop</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="cart.html" class="nav__link">Cart</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="about.html" class="nav__link">About Us</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="contact.html" class="nav__link">Contact Us</a>
+                    </li>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class="bx bx-x"></i>
+                </div>
+            </div>
+
+            <div class="nav__btns">
+                <div class="login__toggle" id="login-toggle">
+                    <i class="bx bx-user"></i>
+                </div>
+
+                <div class="nav__shop" id="cart-shop">
+                    <i class="bx bx-shopping-bag"></i>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-grid-alt'></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- =============== Cart =============== -->
+    <div class="cart " id="cart">
+        <i class="bx bx-x cart__close" id="cart-close"></i>
+
+        <h2 class="cart__title-center">My Cart</h2>
+
+        <div class="cartcontainer">
+            <article class="cart__card">
+                <div class="cart__box">
+                    <img src="/assets/image/cart1.jpg" alt="" class="cart_img">
+                </div>
+
+                <div class="cart__details">
+                    <h3 class="cart_title">รุ่นน้องตัวป่วนอยากชวนเที่ยวเล่น เล่ม 08</h3>
+                    <span class="cart_price">฿76.00</span>
+
+                    <div class="cart__amount">
+                        <div class="cart__amount-content">
+                            <span class="cart__amount-box">
+                                <i class="bx bx-minus"></i>
+                            </span>
+
+                            <span class="cart__amount-number">1</span>
+
+                            <span class="cart__amount-box"></span>
+                            <i class="bx bx-plus"></i>
+                            </span>
+
+                        </div>
+
+                        <i class="bx bx-trash-alt cart__amount-trash"></i>
+                    </div>
+                </div>
+            </article>
+
+            <article class="cart__card">
+                <div class="cart__box">
+                    <img src="/assets/image/cart2.jpg" alt="" class="cart_img">
+                </div>
+
+                <div class="cart__details">
+                    <h3 class="cart_title">ทาสสุดแกร่งแห่งหน่วยป้องกันอสูร slave เล่ม 14 </h3>
+                    <span class="cart_price">฿149.00</span>
+
+                    <div class="cart__amount">
+                        <div class="cart__amount-content">
+                            <span class="cart__amount-box">
+                                <i class="bx bx-minus"></i>
+                            </span>
+
+                            <span class="cart__amount-number">1</span>
+
+                            <span class="cart__amount-box"></span>
+                            <i class="bx bx-plus"></i>
+                            </span>
+
+                        </div>
+
+                        <i class="bx bx-trash-alt cart__amount-trash"></i>
+                    </div>
+                </div>
+            </article>
+
+            <article class="cart__card">
+                <div class="cart__box">
+                    <img src="/assets/image/cart3.jpg" alt="" class="cart_img">
+                </div>
+
+                <div class="cart__details">
+                    <h3 class="cart_title">สองสิงห์อมควันหลังซูเปอร์มาร์เก็ต เล่ม 3 </h3>
+                    <span class="cart_price">฿159.00</span>
+
+                    <div class="cart__amount">
+                        <div class="cart__amount-content">
+                            <span class="cart__amount-box">
+                                <i class="bx bx-minus"></i>
+                            </span>
+
+                            <span class="cart__amount-number">1</span>
+
+                            <span class="cart__amount-box"></span>
+                            <i class="bx bx-plus"></i>
+                            </span>
+
+                        </div>
+
+                        <i class="bx bx-trash-alt cart__amount-trash"></i>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="cart__prices">
+            <span class="cart__prices-item">3 item</span>
+            <span class="cart__prices-total">Total 383฿</span>
+        </div>
+    </div>
+
+    <!-- =============== Fake Login =============== -->
+    <div class="login" id="login">
+        <i class="bx bx-x login__close" id="login-close"></i>
+
+        <h2 class="login__title-center">Login</h2>
+
+        <form action="" class="login__form grid">
+            <div class="login__content">
+                <label for="" class="login__lable">Email</label>
+                <input type="text" class="login__input">
+            </div>
+
+            <div class="login__content">
+                <label for="" class="login__lable">Password</label>
+                <input type="password" class="login__input">
+            </div>
+            <div>
+                <a href="#" class="button">Sign in</a>
+            </div>
+
+            <div>
+                <p class="signup">Not a member?
+                    <a href="register.html">SignUp Now!</a>
+                </p>
+            </div>
+        </form>
+    </div>
+
+    <!-- =============== Main =============== -->
+    <main class="main">
+        <!-- =============== Home  =============== -->
+        <section class="home container">
+            <div class="swiper home-swiper">
+                <div class="swiper-wrapper">
+                    <!-- =============== Home swiper 1 =============== -->
+                    <section class="swiper-slide">
+                        <div class="home__content grid">
+                            <div class="home__group">
+                                <img src="/assets/image/bs6.jpg" alt="" class="home__img">
+                                <div class="home__indicator"></div>
+
+                                <div class="home__details-img">
+                                    <h4 class="home__details-title">"คำอธิษฐานในวันที่จากลา FRIEREN"</h4>
+                                    <span class="home__details-subtitle">KANEHITO YAMA/TSUKASA ABE</span>
+                                </div>
+                            </div>
+
+                            <div class="home__data">
+                                <h3 class="home__subtitle">มังงะยอดนิยมอันดับ #1 ในใจผู้อ่าน</h3>
+                                <h1 class="home__title">เรื่องราวการเดินทาง <br> การเริ่มต้น <br> และการจากลา</h1>
+                                <p class="home__description">"เรื่องราวหลังจาก" ที่ขบวนผู้กล้าพิชิตราชาปีศาจแล้ว
+                                    เมจฟรีเรนเป็นเอลฟ์ ส่วนอีก 3 คนที่ร่วมเดินทางด้วยก็แยกย้ายกันไปที่อื่น
+                                    ชีวิตของเธอสิ่งที่เธอสัมผัสในโลก "หลังจากนั้น"
+                                    มันโยงใยไปถึงเหล่าผู้คนที่เหลืออยู่การจากลาและคำอธิฐานเรื่องราวเริ่มต้นขึ้น"เมื่อการผจญภัยสิ้นสุด"เรื่องราวแฟนตาซีภายหลังจากนั้นที่สืบต่อตำนานของเหล่าฮีโร่
+                                    "ผู้มีชีวิตอยู่"</p>
+
+                                <div class="home__buttons">
+                                    <a href="details.html" class="button">Buy Now</a>
+                                    <a href="details.html" class="button--link button--flex">View Details <i
+                                            class="bx bx-right-arrow-alt button__icon"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- =============== Home swiper 2 =============== -->
+                    <section class="swiper-slide">
+                        <div class="home__content grid">
+                            <div class="home__group">
+                                <img src="/assets/image/bs2.jpg" alt="" class="home__img">
+                                <div class="home__indicator"></div>
+
+                                <div class="home__details-img">
+                                    <h4 class="home__details-title">"ทาสรักสังเวียนเถื่อน"</h4>
+                                    <span class="home__details-subtitle">ไซโซ ฮาราวาตะ</span>
+                                </div>
+                            </div>
+
+                            <div class="home__data">
+                                <h3 class="home__subtitle">มังงะออกใหม่ยอดนิยมอันดับ #1</h3>
+                                <h1 class="home__title">การต่อสู้ <br> รางวัล <br> และทาส</h1>
+                                <p class="home__description">การเรียนงั้นๆ กีฬาก็ไม่เด่นทาสรักสังเวียนเถื่อน
+                                    เด็กหนุ่มผู้มีดีแค่เล่นเกมเก่งคนนี้มีชื่อว่า มิคากามิ โคจิ
+                                    วันหนึ่งเขาถูกอัญเชิญไปยังต่างโลก
+                                    ทว่าโชคไม่ดีที่สกิลเพียงหนึ่งเดียวกลับกระจอกเกินบรรยาย
+                                    โคจิจึงต้องโทษกลายเป็นทาสนักสู้ในโคลอสเซียมแสนพิลึกพิลั่น
+                                    อันมีกฎว่า ‘ผู้แพ้จะตกเป็นทาสกามของผู้ชนะ’...
+                                </p>
+
+                                <div class="home__buttons">
+                                    <a href="details.html" class="button">Buy Now</a>
+                                    <a href="details.html" class="button--link button--flex">View Details <i
+                                            class="bx bx-right-arrow-alt button__icon"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- =============== Home swiper 3 =============== -->
+                    <section class="swiper-slide">
+                        <div class="home__content grid">
+                            <div class="home__group">
+                                <img src="/assets/image/bs1.jpg" alt="" class="home__img">
+                                <div class="home__indicator"></div>
+
+                                <div class="home__details-img">
+                                    <h4 class="home__details-title">"ตำนานดาบและคทาแห่งวิสตอเรีย"</h4>
+                                    <span class="home__details-subtitle">Fujino Omori</span>
+                                </div>
+                            </div>
+
+                            <div class="home__data">
+                                <h3 class="home__subtitle">กระแสและยอดหขายมาแรงอันดับ #1</h3>
+                                <h1 class="home__title">เวทย์มนตร์ <br> ดาบ <br> และการต่อสู้</h1>
+                                <p class="home__description">วิล เซอร์โฮลท์สอบตกในการสอบของเอ็ดเวิร์ด
+                                    ทำให้ไม่สามารถเก็บหน่วยกิต
+                                    ได้เพียงพอสำหรับเข้าไปเรียนต่อใน "หอคอย"
+                                    จึงต้องแยกจากคอลเล็ตและคนอื่นๆ มาอยู่คนเดียว
+                                    ขณะที่เมืองหลวงลีการ์เด้นกำลังคึกคัก
+                                    เพราะกำลังจะเข้าสู่ "เทศกาลเทลมินาเรีย"
+                                    ซึ่งเป็นเทศกาลปีใหม่นั้นเอง...
+                                    ภัยร้ายที่น่าหวาดกลัวก็ย่างกรายใกล้เข้ามา!!
+                                </p>
+
+                                <div class="home__buttons">
+                                    <a href="details.html" class="button">Buy Now</a>
+                                    <a href="details.html" class="button--link button--flex">View Details <i
+                                            class="bx bx-right-arrow-alt button__icon"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- =============== สินค้าลดราคา  =============== -->
+        <div class="discount__container container grid">
+            <img src="assets/image/bs4.jpg" alt="" class="discount__img">
+
+            <div class="discount__data">
+                <h2 class="discount__title">สินค้าลดราคาโปรโมชั่นพิเศษ 50% <br> สำหรับเดือนนี้ </h2>
+                <a href="#" class="button">Buy Now</a>
+            </div>
+        </div>
+
+        <!-- =============== สินค้ามาใหม่ =============== -->
+        <section class="new section">
+            <h2 class="section__title">สินค้ามาใหม่</h2>
+
+            <div class="new__container container">
+                <div class="swiper new-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- =============== สินค้าใหม่1 =============== -->
+                        <div class="new__content swiper-slide">
+                            <div class="new__tag">New</div>
+                            <img src="assets/image/new1.jpg" alt="" class="new__img">
+                            <h3 class="new__title">อย่ามาจับนะ โคเทซาชิคุง 3</h3>
+                            <span class="new__subtitle">Manga</span>
+
+                            <div class="new__prices">
+                                <span class="new__price">100.00฿</span>
+                                <span class="new__discount">50.00฿</span>
+                            </div>
+
+                            <a href="details.html" class="button new__button">
+                                <i class="bx bx-cart-alt new__icon"></i>
+                            </a>
+                        </div>
+
+                        <!-- =============== สินค้าใหม่2 =============== -->
+                        <div class="new__content swiper-slide">
+                            <div class="new__tag">New</div>
+                            <img src="assets/image/new2.jpg" alt="" class="new__img">
+                            <h3 class="new__title">KAIJYU No.8 เล่ม 13</h3>
+                            <span class="new__subtitle">Manga</span>
+
+                            <div class="new__prices">
+                                <span class="new__price">99.00฿</span>
+                                <span class="new__discount">60.00฿</span>
+                            </div>
+
+                            <a href="details.html" class="button new__button">
+                                <i class="bx bx-cart-alt new__icon"></i>
+                            </a>
+                        </div>
+
+                        <!-- =============== สินค้าใหม่3 =============== -->
+                        <div class="new__content swiper-slide">
+                            <div class="new__tag">New</div>
+                            <img src="assets/image/new3.jpg" alt="" class="new__img">
+                            <h3 class="new__title">คุณชิกิโมริไม่ได้น่ารักแค่อย่างเดียวนะ 13</h3>
+                            <span class="new__subtitle">Manga</span>
+
+                            <div class="new__prices">
+                                <span class="new__price">100.00฿</span>
+                                <span class="new__discount">50.00฿</span>
+                            </div>
+
+                            <a href="details.html" class="button new__button">
+                                <i class="bx bx-cart-alt new__icon"></i>
+                            </a>
+                        </div>
+
+                        <!-- =============== สินค้าใหม่4 =============== -->
+                        <div class="new__content swiper-slide">
+                            <div class="new__tag">New</div>
+                            <img src="assets/image/new4.jpg" alt="" class="new__img">
+                            <h3 class="new__title">สะดุดรักยัยแฟนเช่า 33</h3>
+                            <span class="new__subtitle">Manga</span>
+
+                            <div class="new__prices">
+                                <span class="new__price">100.00฿</span>
+                                <span class="new__discount">50.00฿</span>
+                            </div>
+
+                            <a href="details.html" class="button new__button">
+                                <i class="bx bx-cart-alt new__icon"></i>
+                            </a>
+                        </div>
+
+                        <!-- =============== สินค้าใหม่5 =============== -->
+                        <div class="new__content swiper-slide">
+                            <div class="new__tag">New</div>
+                            <img src="assets/image/new5.jpg" alt="" class="new__img">
+                            <h3 class="new__title">สุดท้ายก็คือเธอ ตอนที่ 29</h3>
+                            <span class="new__subtitle">Manga</span>
+
+                            <div class="new__prices">
+                                <span class="new__price">100.00฿</span>
+                                <span class="new__discount">50.00฿</span>
+                            </div>
+
+                            <a href="details.html" class="button new__button">
+                                <i class="bx bx-cart-alt new__icon"></i>
+                            </a>
+                        </div>
+
+                        <!-- =============== สินค้าใหม่6 =============== -->
+                        <div class="new__content swiper-slide">
+                            <div class="new__tag">New</div>
+                            <img src="assets/image/new6.jpg" alt="" class="new__img">
+                            <h3 class="new__title">แด่ตัวฉันอันเป็นที่รัก ด้วยจิตสังหาร 02</h3>
+                            <span class="new__subtitle">Manga</span>
+
+                            <div class="new__prices">
+                                <span class="new__price">100.00฿</span>
+                                <span class="new__discount">50.00฿</span>
+                            </div>
+
+                            <a href="details.html" class="button new__button">
+                                <i class="bx bx-cart-alt new__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =============== Footer =============== -->
+    <footer class="footer section">
+        <div class="footer__container container grid">
+            <!-- =============== Footer Content1 =============== -->
+            <div class="footer__content">
+                <a href="#" class="footer__logo">
+                    <i class="bx bxs-book-reader footer__logo-icon"></i> Book SleepWalker
+                </a>
+
+                <p class="footer__description">แหล่งรวมหนังสือคุณภาพ <br> ส่งตรงจากณี่ปุ่น </p>
+
+                <ul class="footer__social">
+                    <a href="#" class="footer__social-link"><i class="bx bxl-facebook"></i></a>
+                    <a href="#" class="footer__social-link"><i class="bx bxl-youtube"></i></a>
+                    <a href="#" class="footer__social-link"><i class="bx bxl-twitter"></i></a>
+                    <a href="#" class="footer__social-link"><i class="bx bxl-instagram"></i></a>
+                </ul>
+            </div>
+            <!-- =============== Footer Content2 =============== -->
+            <div class="footer__content">
+                <h3 class="footer__title">About</h3>
+
+                <ul class="footer__links">
+                    <li><a href="#" class="footer__link">เกี่ยวกับพวกเรา</a></li>
+                    <li><a href="#" class="footer__link">ศูนย์บริการลูกค้่า</a></li>
+                    <li><a href="#" class="footer__link">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- =============== Footer Content3 =============== -->
+            <div class="footer__content">
+                <h3 class="footer__title">ผู้สนับสนุนของพวกเรา</h3>
+
+                <ul class="footer__links">
+                    <li><a href="https://www.firstpagepro.com/" class="footer__link">First Page Pro</a></li>
+                    <li><a href="https://www.phoenixnext.com/?srsltid=AfmBOoojTBIEDl5uqASlLhggw35jl0_dQwyL7SspkXsNY2WceWwjmKgH"
+                            class="footer__link">Phoenix Next</a></li>
+                    <li><a href="https://www.luckpim.com/" class="footer__link">Luck Pim</a></li>
+                </ul>
+            </div>
+
+            <!-- =============== Footer Content4 =============== -->
+            <div class="footer__content">
+                <h3 class="footer__title">Service</h3>
+
+                <ul class="footer__links">
+                    <li><a href="#" class="footer__link">Chat Us</a></li>
+                    <li><a href="#" class="footer__link">Contact Us</a></li>
+                    <li><a href="#" class="footer__link"></a></li>
+                </ul>
+            </div>
+
+        </div>
+        <span class="footer__copy">
+            <p>&copy; 2024 Book SleepWalker. All rights reserved.</p>
+        </span>
+    </footer>
+
+    <!-- ===============Scroll Up =============== -->
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="bx bx-up-arrow-alt scrollup__icon"></i>
+    </a>
+
+
+    <!-- =============== Swiper Js =============== -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!-- =============== Main Js =============== -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
