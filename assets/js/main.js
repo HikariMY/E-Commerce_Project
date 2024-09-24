@@ -99,3 +99,40 @@ if(navClose){
     navMenu.classList.remove('show-menu')
   })
 }
+
+/*==========  Book Filter ==========*/
+document.addEventListener('DOMContentLoaded', function () {
+  // เลือก input ทั้งหมดที่เป็น category filter
+  const filters = document.querySelectorAll('.category-filter');
+
+  // เพิ่ม event listener เมื่อมีการเปลี่ยนแปลงการติ๊ก checkbox
+  filters.forEach(filter => {
+      filter.addEventListener('change', function () {
+          filterBooks();
+      });
+  });
+
+  function filterBooks() {
+      // ดึงค่าประเภทที่เลือก
+      const activeFilters = Array.from(filters)
+          .filter(filter => filter.checked)
+          .map(filter => filter.value);
+
+      // เลือกหนังสือทั้งหมด
+      const books = document.querySelectorAll('.book-item');
+
+      books.forEach(book => {
+          // ดึงประเภทหนังสือจาก data-category และแยกเป็นอาเรย์
+          const categories = book.getAttribute('data-category').split(',');
+
+          // แสดงหรือซ่อนหนังสือตามประเภทที่เลือก
+          if (activeFilters.length === 0 || activeFilters.some(filter => categories.includes(filter))) {
+              book.style.display = 'block';  // แสดงหนังสือ
+          } else {
+              book.style.display = 'none';  // ซ่อนหนังสือ
+          }
+      });
+  }
+  // เรียกใช้ฟังก์ชันกรองหนังสือเมื่อโหลดหน้าเว็บครั้งแรก
+  filterBooks();
+});
