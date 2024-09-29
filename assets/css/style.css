@@ -844,7 +844,7 @@ input {
 .shop__img {
   width: 150px;
   margin-bottom: var(--mb-1);
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .shop__tag {
@@ -887,16 +887,16 @@ input {
   font-weight: var(--font-medium);
 }
 
-.shop__button{
+.shop__button {
   display: inline-flex;
-  padding: .5rem;
-  border-radius: .25rem .25rem .75rem .25rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem 0.25rem 0.75rem 0.25rem;
   position: absolute;
   bottom: 0;
   right: -3rem;
 }
 
-.shop__icon{
+.shop__icon {
   font-size: 1.25rem;
 }
 
@@ -913,7 +913,7 @@ input {
   display: flex;
   align-items: center;
   justify-content: end;
-  column-gap:  .8rem;
+  column-gap: 0.8rem;
   margin-top: var(--mb-2-5);
   font-size: var(--normal-font-size);
 }
@@ -933,8 +933,35 @@ input {
   color: #fff;
 }
 
-.pagination__icon{
+.pagination__icon {
   font-size: var(--h2-font-size);
+}
+
+/*========== Cart page ==========*/
+
+.cart__container {
+  display: grid;
+  grid-template-columns: 250px 2fr; /* กำหนดความกว้างของ sidebar เป็น 250px และ shop content กินพื้นที่ที่เหลือ */
+  column-gap: 1.8rem; /* ช่องว่างระหว่าง sidebar และ shop content */
+}
+.shop__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.shop__card {
+  text-align: center;
+  width: 30%;
+}
+
+.cart_summary {
+  position: fixed;
+  right: 0;
+  top: 100px;
+  width: 300px;
+  background-color: var(--container-color);
+  padding: 20px;
+  border-left: 1px solid #ddd;
 }
 
 /*========== Responsive2  ==========*/
@@ -1010,16 +1037,16 @@ input {
     font-size: var(--normal-font-size);
   }
 
-  .shop__container{
+  .shop__container {
     grid-template-columns: 1.6fr 3.4fr;
   }
 
-  .shop__content{
+  .shop__content {
     padding: 2rem 0 1.5rem;
-    border-radius: .75rem;
+    border-radius: 0.75rem;
   }
 
-  .shop__img{
+  .shop__img {
     width: 120px;
   }
 
@@ -1028,7 +1055,7 @@ input {
     margin-bottom: var(--mb-0-5);
   }
 
-  .shop__title{
+  .shop__title {
     font-size: var(--normal-font-size);
   }
 }
@@ -1108,13 +1135,13 @@ input {
     padding-left: 0;
   }
 
-  .shop__container{
+  .shop__container {
     grid-template-columns: 520px;
     justify-content: center;
     row-gap: 2rem;
   }
 
-  .pagination{
+  .pagination {
     justify-content: center;
   }
 
@@ -1134,26 +1161,26 @@ input {
     width: 100%;
   }
 
-  .shop__container{
-    grid-template-columns: .8fr;
+  .shop__container {
+    grid-template-columns: 0.8fr;
   }
 
-  .shop__items{
+  .shop__items {
     grid-template-columns: 1fr;
   }
 
-  .sidebar{
+  .sidebar {
     padding: 1.25rem 1.4rem;
   }
 
   .pagination a {
     height: 1.8rem;
     width: 1.8rem;
-    line-height: 30px ;
+    line-height: 30px;
   }
 
-  .pagination{
-    column-gap: .4rem;
+  .pagination {
+    column-gap: 0.4rem;
   }
 }
 @media screen and (max-width: 320px) {
@@ -1176,7 +1203,7 @@ input {
     row-gap: 1rem;
   }
 
-  .shop__container{
+  .shop__container {
     grid-template-columns: 1fr;
   }
 

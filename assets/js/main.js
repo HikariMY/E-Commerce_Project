@@ -136,3 +136,45 @@ document.addEventListener('DOMContentLoaded', function () {
   // เรียกใช้ฟังก์ชันกรองหนังสือเมื่อโหลดหน้าเว็บครั้งแรก
   filterBooks();
 });
+
+/*==========  Add Crats ==========*/
+let cartItems = [];
+let totalAmount = 0;
+
+function addToCart(productName, price) {
+    // ค้นหาว่าสินค้าอยู่ในตะกร้าแล้วหรือไม่
+    const existingItem = cartItems.find(item => item.name === productName);
+
+    if (existingItem) {
+        // ถ้ามีสินค้าในตะกร้าแล้ว เพิ่มจำนวน
+        existingItem.quantity += 1;
+        existingItem.totalPrice += price;
+    } else {
+        // ถ้ายังไม่มีสินค้าในตะกร้า เพิ่มสินค้าลงใน cartItems
+        cartItems.push({
+            name: productName,
+            price: price,
+            quantity: 1,
+            totalPrice: price
+        });
+    }
+
+    // เพิ่มราคารวม
+    totalAmount += price;
+    displayCart();
+}
+
+function displayCart() {
+    const cartItemsContainer = document.getElementById('cart-items');
+    cartItemsContainer.innerHTML = ''; // ล้างข้อมูลเดิม
+
+    cartItems.forEach(item => {
+        const cartItem = document.createElement('p');
+        cartItem.textContent = `${item.name} x ${item.quantity} - ฿${item.totalPrice}`;
+        cartItemsContainer.appendChild(cartItem);
+    });
+
+    // อัปเดตราคารวม
+    document.getElementById('total-price').textContent = totalAmount;
+}
+
