@@ -70,103 +70,30 @@
     </header>
 
     <!-- =============== Cart =============== -->
-    <div class="cart " id="cart">
+    <div class="cart" id="cart">
         <i class="bx bx-x cart__close" id="cart-close"></i>
-
         <h2 class="cart__title-center">My Cart</h2>
 
-        <div class="cartcontainer">
-            <article class="cart__card">
-                <div class="cart__box">
-                    <img src="/assets/image/cart1.jpg" alt="" class="cart_img">
-                </div>
-
-                <div class="cart__details">
-                    <h3 class="cart_title">รุ่นน้องตัวป่วนอยากชวนเที่ยวเล่น เล่ม 08</h3>
-                    <span class="cart_price">฿76.00</span>
-
-                    <div class="cart__amount">
-                        <div class="cart__amount-content">
-                            <span class="cart__amount-box">
-                                <i class="bx bx-minus"></i>
-                            </span>
-
-                            <span class="cart__amount-number">1</span>
-
-                            <span class="cart__amount-box"></span>
-                            <i class="bx bx-plus"></i>
-                            </span>
-
-                        </div>
-
-                        <i class="bx bx-trash-alt cart__amount-trash"></i>
-                    </div>
-                </div>
-            </article>
-
-            <article class="cart__card">
-                <div class="cart__box">
-                    <img src="/assets/image/cart2.jpg" alt="" class="cart_img">
-                </div>
-
-                <div class="cart__details">
-                    <h3 class="cart_title">ทาสสุดแกร่งแห่งหน่วยป้องกันอสูร slave เล่ม 14 </h3>
-                    <span class="cart_price">฿149.00</span>
-
-                    <div class="cart__amount">
-                        <div class="cart__amount-content">
-                            <span class="cart__amount-box">
-                                <i class="bx bx-minus"></i>
-                            </span>
-
-                            <span class="cart__amount-number">1</span>
-
-                            <span class="cart__amount-box"></span>
-                            <i class="bx bx-plus"></i>
-                            </span>
-
-                        </div>
-
-                        <i class="bx bx-trash-alt cart__amount-trash"></i>
-                    </div>
-                </div>
-            </article>
-
-            <article class="cart__card">
-                <div class="cart__box">
-                    <img src="/assets/image/cart3.jpg" alt="" class="cart_img">
-                </div>
-
-                <div class="cart__details">
-                    <h3 class="cart_title">สองสิงห์อมควันหลังซูเปอร์มาร์เก็ต เล่ม 3 </h3>
-                    <span class="cart_price">฿159.00</span>
-
-                    <div class="cart__amount">
-                        <div class="cart__amount-content">
-                            <span class="cart__amount-box">
-                                <i class="bx bx-minus"></i>
-                            </span>
-
-                            <span class="cart__amount-number">1</span>
-
-                            <span class="cart__amount-box"></span>
-                            <i class="bx bx-plus"></i>
-                            </span>
-
-                        </div>
-
-                        <i class="bx bx-trash-alt cart__amount-trash"></i>
-                    </div>
-                </div>
-            </article>
+        <div class="cartcontainer" id="cart-items">
+            <!-- สินค้าจะถูกแสดงในส่วนนี้ผ่าน JavaScript -->
         </div>
 
         <div class="cart__prices">
-            <span class="cart__prices-item">3 item</span>
-            <span class="cart__prices-total">Total 383฿</span>
+            <span class="cart__prices-item" id="cart-items-count">0 items</span>
+            <span class="cart__prices-total">Total: <span id="total-price">฿0.00</span></span>
+        </div>
+
+        <div class="link_wrapper">
+            <button class="custom-link" id="checkout-button">สั่งซื้อ</button> <a href="cart.html"></a>
+        </div>
+
+        <div class="body-overlay" id="body-overlay"></div> <!-- พื้นหลังสีดำ -->
+
+        <div id="success-message" class="hidden">
+            <img src="assets/image/truck.gif" alt="Truck Animation" class="truck-animation" />
+
         </div>
     </div>
-
     <!-- =============== Fake Login =============== -->
     <div class="login" id="login">
         <i class="bx bx-x login__close" id="login-close"></i>
@@ -211,7 +138,7 @@
                             <span class="shop__price">100.00฿</span>
                         </div>
                         <button class="button shop__button"
-                            onclick="addToCart('ตำนานดาบและคทาแห่งวิสตอเรีย เล่ม 7', 100)">
+                            onclick="addToCart('ตำนานดาบและคทาแห่งวิสตอเรีย เล่ม 7', 100,'assets/image/bs1.jpg')">
                             <i class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
@@ -224,7 +151,8 @@
                         <div class="shop__price">
                             <span class="shop__price">100.00฿</span>
                         </div>
-                        <button class="button shop__button" onclick="addToCart('ทาสรักสังเวียนเถื่อน เล่ม 1', 100)">
+                        <button class="button shop__button"
+                            onclick="addToCart('ทาสรักสังเวียนเถื่อน เล่ม 1', 100,'assets/image/bs2.jpg')">
                             <i class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
@@ -239,7 +167,7 @@
                             <span class="shop__price">250.00฿</span>
                         </div>
                         <button class="button shop__button"
-                            onclick="addToCart('คุณอาเรียโต๊ะข้างๆพูดรัสเซียหวานใส่ซะหัวใจจะวาย เล่ม พิเศษ', 250)">
+                            onclick="addToCart('คุณอาเรียโต๊ะข้างๆพูดรัสเซียหวานใส่ซะหัวใจจะวาย เล่ม พิเศษ', 250, 'assets/image/bs3.jpg')">
                             <i class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
@@ -254,7 +182,7 @@
                             <span class="shop__price">99.00฿</span>
                         </div>
                         <button class="button shop__button"
-                            onclick="addToCart('ขอทำเรื่องไม่ดีด้วยได้มั้ยคะ เล่ม 1', 99)"> <i
+                            onclick="addToCart('ขอทำเรื่องไม่ดีด้วยได้มั้ยคะ เล่ม 1', 99,'assets/image/bs4.jpg')"> <i
                                 class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
@@ -268,7 +196,8 @@
                         <div class="shop__price">
                             <span class="shop__price">75.00฿</span>
                         </div>
-                        <button class="button shop__button" onclick="addToCart('ฮันนี่แทรปแชร์ฮาส์ เล่ม 1', 75)"> <i
+                        <button class="button shop__button"
+                            onclick="addToCart('ฮันนี่แทรปแชร์ฮาส์ เล่ม 1', 75, 'assets/image/bs5.jpg')"> <i
                                 class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
@@ -283,8 +212,8 @@
                             <span class="shop__price">75.00฿</span>
                         </div>
                         <button class="button shop__button"
-                            onclick="addToCart('สองสิงห์อมควันหลังซุปเปอร์มาร์เก็ต เล่ม 3', 75)"> <i
-                                class="bx bx-cart-alt shop__icon"></i></button>
+                            onclick="addToCart('สองสิงห์อมควันหลังซุปเปอร์มาร์เก็ต เล่ม 3', 75, 'assets/image/cart3.jpg')">
+                            <i class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
 
@@ -298,8 +227,8 @@
                             <span class="shop__price">50.00฿</span>
                         </div>
                         <button class="button shop__button"
-                            onclick="addToCart('รุ่นน้องตัวป่วนอยากชวนเที่ยวเล่น เล่ม 8', 50)"> <i
-                                class="bx bx-cart-alt shop__icon"></i></button>
+                            onclick="addToCart('รุ่นน้องตัวป่วนอยากชวนเที่ยวเล่น เล่ม 8', 50,'assets/image/cart1.jpg')">
+                            <i class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
 
@@ -312,7 +241,8 @@
                         <div class="shop__price">
                             <span class="shop__price">50.00฿</span>
                         </div>
-                        <button class="button shop__button" onclick="addToCart('สะดุดรักยัยแฟนเช่า เล่ม 33', 50)"> <i
+                        <button class="button shop__button"
+                            onclick="addToCart('สะดุดรักยัยแฟนเช่า เล่ม 33', 50,'assets/image/new4.jpg')"> <i
                                 class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
@@ -326,7 +256,8 @@
                         <div class="shop__price">
                             <span class="shop__price">50.00฿</span>
                         </div>
-                        <button class="button shop__button" onclick="addToCart('สุดท้ายก็คือเธอ เล่มที่ 29', 50)"> <i
+                        <button class="button shop__button"
+                            onclick="addToCart('สุดท้ายก็คือเธอ เล่มที่ 29', 50,'assets/image/new5.jpg')"> <i
                                 class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
@@ -341,8 +272,8 @@
                             <span class="shop__price">50.00฿</span>
                         </div>
                         <button class="button shop__button"
-                            onclick="addToCart('แด่ตัวฉันอันเป็นที่รัก ด้วยจิตสังหาร เล่ม 2', 50)"> <i
-                                class="bx bx-cart-alt shop__icon"></i></button>
+                            onclick="addToCart('แด่ตัวฉันอันเป็นที่รัก ด้วยจิตสังหาร เล่ม 2', 50,'assets/image/new6.jpg')">
+                            <i class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
 
@@ -355,7 +286,8 @@
                         <div class="shop__price">
                             <span class="shop__price">50.00฿</span>
                         </div>
-                        <button class="button shop__button" onclick="addToCart('รักใครหัวใจสีชมพู เล่ม 3', 50)"> <i
+                        <button class="button shop__button"
+                            onclick="addToCart('รักใครหัวใจสีชมพู เล่ม 3', 50, 'assets/image/dis1.jpg')"> <i
                                 class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
@@ -369,7 +301,8 @@
                         <div class="shop__price">
                             <span class="shop__price">100.00฿</span>
                         </div>
-                        <button class="button shop__button" onclick="addToCart('บตจิเดอะร็อก เล่ม 1', 100)"> <i
+                        <button class="button shop__button"
+                            onclick="addToCart('บตจิเดอะร็อก เล่ม 1', 100,'assets/image/dis2.jpg')"> <i
                                 class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
@@ -384,8 +317,8 @@
                             <span class="shop__price">100.00฿</span>
                         </div>
                         <button class="button shop__button"
-                            onclick="addToCart('ตำนานดาบและคทาแห่งวิสตอเรีย เล่ม 1', 100)"> <i
-                                class="bx bx-cart-alt shop__icon"></i></button>
+                            onclick="addToCart('ตำนานดาบและคทาแห่งวิสตอเรีย เล่ม 1', 100,'assets/image/Manga/Mg1.jpg')">
+                            <i class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
 
@@ -399,8 +332,8 @@
                             <span class="shop__price">100.00฿</span>
                         </div>
                         <button class="button shop__button"
-                            onclick="addToCart('หนุ่มเย็บผ้ากับสาวนักคอสเพลย์ เล่ม 1', 100)"> <i
-                                class="bx bx-cart-alt shop__icon"></i></button>
+                            onclick="addToCart('หนุ่มเย็บผ้ากับสาวนักคอสเพลย์ เล่ม 1', 100,'assets/image/Manga/Mg2.jpg')">
+                            <i class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
 
@@ -413,7 +346,8 @@
                         <div class="shop__price">
                             <span class="shop__price">76.00฿</span>
                         </div>
-                        <button class="button shop__button" onclick="addToCart('ขบวนการกำมะลอ เล่ม 1', 76)"> <i
+                        <button class="button shop__button"
+                            onclick="addToCart('ขบวนการกำมะลอ เล่ม 1', 76,'assets/image/Manga/Mg3.jpg')"> <i
                                 class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
@@ -427,7 +361,8 @@
                         <div class="shop__price">
                             <span class="shop__price">72.00฿</span>
                         </div>
-                        <button class="button shop__button" onclick="addToCart('ความลับสาวน้อย เล่ม 1', 72)"> <i
+                        <button class="button shop__button"
+                            onclick="addToCart('ความลับสาวน้อย เล่ม 1', 72,'assets/image/Manga/Mg4.jpg')"> <i
                                 class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
@@ -441,7 +376,8 @@
                         <div class="shop__price">
                             <span class="shop__price">56.00฿</span>
                         </div>
-                        <button class="button shop__button" onclick="addToCart('หน้ากากเดนนรก เล่ม 1', 56)"> <i
+                        <button class="button shop__button"
+                            onclick="addToCart('หน้ากากเดนนรก เล่ม 1', 56,'assets/image/Manga/Mg5.jpg')"> <i
                                 class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
@@ -455,7 +391,8 @@
                         <div class="shop__price">
                             <span class="shop__price">249.00฿</span>
                         </div>
-                        <button class="button shop__button" onclick="addToCart('86 -เอทตี้ซิกซ์ เล่ม 1', 249)"> <i
+                        <button class="button shop__button"
+                            onclick="addToCart('86 -เอทตี้ซิกซ์ เล่ม 1', 249,'assets/image/Lights Novel/Ln1.jpg')"> <i
                                 class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
@@ -470,8 +407,8 @@
                             <span class="shop__price">249.00฿</span>
                         </div>
                         <button class="button shop__button"
-                            onclick="addToCart('ราชินีนักล่าค่าประสบการณ์ เล่ม 1', 249)"> <i
-                                class="bx bx-cart-alt shop__icon"></i></button>
+                            onclick="addToCart('ราชินีนักล่าค่าประสบการณ์ เล่ม 1', 249,'assets/image/Lights Novel/Ln2.jpg')">
+                            <i class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
 
@@ -485,8 +422,8 @@
                             <span class="shop__price">249.00฿</span>
                         </div>
                         <button class="button shop__button"
-                            onclick="addToCart('ขอให้รักเรานี้ได้มีความสุข เล่ม 1', 249)"> <i
-                                class="bx bx-cart-alt shop__icon"></i></button>
+                            onclick="addToCart('ขอให้รักเรานี้ได้มีความสุข เล่ม 1', 249,'assets/image/Lights Novel/Ln3.jpg')">
+                            <i class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
 
@@ -500,8 +437,8 @@
                             <span class="shop__price">249.00฿</span>
                         </div>
                         <button class="button shop__button"
-                            onclick="addToCart('ขอให้รักเรานี้ได้มีความสุข เล่ม 1', 249)"> <i
-                                class="bx bx-cart-alt shop__icon"></i></button>
+                            onclick="addToCart('ขอให้รักเรานี้ได้มีความสุข เล่ม 1', 249,'assets/image/Lights Novel/Ln5.jpg')">
+                            <i class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
 
@@ -515,7 +452,7 @@
                             <span class="shop__price">846.00฿</span>
                         </div>
                         <button class="button shop__button"
-                            onclick="addToCart('I Had That Same Dream Again', 846)"> <i
+                            onclick="addToCart('I Had That Same Dream Again', 846,'assets/image/Audiobook/Ab1.jpg')"> <i
                                 class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
@@ -530,8 +467,8 @@
                             <span class="shop__price">846.00฿</span>
                         </div>
                         <button class="button shop__button"
-                            onclick="addToCart('The Saint s Magic Power is Omnipotent Vol.1', 846)"> <i
-                                class="bx bx-cart-alt shop__icon"></i></button>
+                            onclick="addToCart('The Saint s Magic Power is Omnipotent Vol.1', 846,'assets/image/Audiobook/Ab2.jpg')">
+                            <i class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
 
@@ -545,8 +482,8 @@
                             <span class="shop__price">846.00฿</span>
                         </div>
                         <button class="button shop__button"
-                            onclick="addToCart('At Night, I Become a Monster', 846)"> <i
-                                class="bx bx-cart-alt shop__icon"></i></button>
+                            onclick="addToCart('At Night, I Become a Monster', 846,'assets/image/Audiobook/Ab3.jpg')">
+                            <i class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
 
@@ -560,36 +497,29 @@
                             <span class="shop__price">846.00฿</span>
                         </div>
                         <button class="button shop__button"
-                            onclick="addToCart('Perfect Blue: Complete Metamorphosis', 846)"> <i
-                                class="bx bx-cart-alt shop__icon"></i></button>
+                            onclick="addToCart('Perfect Blue: Complete Metamorphosis', 846,'assets/image/Audiobook/Ab4.jpg')">
+                            <i class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
 
                 <div class="shop__content grid">
                     <div class="shop__content book-item" data-category="manga,act">
                         <img src="assets/image/Audiobook/Ab5.jpg" alt="" class="shop__img">
-                        <h3 class="shop__title">The Condemned Villainess Goes Back in Time and Aims to Become the Ultimate Villain Vol. 1</h3>
+                        <h3 class="shop__title">The Condemned Villainess Goes Back in Time and Aims to Become the
+                            Ultimate Villain Vol. 1</h3>
                         <span class="shop__subtitle">AudioBook</span>
 
                         <div class="shop__price">
                             <span class="shop__price">846.00฿</span>
                         </div>
                         <button class="button shop__button"
-                            onclick="addToCart('The Condemned Villainess Goes Back in Time and Aims to Become the Ultimate Villain Vol. 1', 846)"> <i
-                                class="bx bx-cart-alt shop__icon"></i></button>
+                            onclick="addToCart('The Condemned Villainess Goes Back in Time and Aims to Become the Ultimate Villain Vol. 1', 846,'assets/image/Audiobook/Ab5.jpg')">
+                            <i class="bx bx-cart-alt shop__icon"></i></button>
                     </div>
                 </div>
             </div>
             </div>
         </section>
-
-        <!-- Cart Summary -->
-        <aside class="cart_summary " onclick="toggleCart()">
-            <h2>Your Cart</h2>
-            <div id="cart-items"></div>
-            <h2>Total: ฿<span id="total-price">0</span></h2>
-            <a href="cart.html"><i class="bx bx-trash-alt cart__amount-trash"></i></a>
-        </aside>
     </main>
 
     <!-- =============== Footer =============== -->

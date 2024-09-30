@@ -15,6 +15,17 @@
   --shadow: hsl(0, 0%, 15%, 0.1);
   --scroll-bar-color: hsl(250, 12%, 90%);
   --scroll-thump-color-alt: hsl(250, 12%, 80%);
+  --primary: #275efe;
+  --primary-light: #7699ff;
+  --dark: #1c212e;
+  --grey-dark: #3f4656;
+  --grey: #6c7486;
+  --grey-light: #cdd9ed;
+  --white: #fff;
+  --green: #16bf78;
+  --sand: #dcb773;
+  --sand-light: #edd9a9;
+
   /*========== Font และ ข้อความต่างๆ ==========*/
   --body-font: "Montserrat", sans-serif;
   --body-fonts: "Kanit", sans-serif;
@@ -264,15 +275,18 @@ input {
   top: 0;
   right: -100%;
   padding: 3.5rem;
-  transition: 0.4s;
+  transition: right 0.4s; /* เปลี่ยนจาก transition ทั้งหมดเป็นการเลื่อน right เท่านั้น */
 }
 
+/* สไตล์หัวเรื่อง */
 .cart__title-center {
   font-size: var(--h2-font-size);
   text-align: center;
   margin-bottom: var(--mb-3);
+  font-weight: bold; /* ทำให้หัวเรื่องเด่นขึ้น */
 }
 
+/* ปุ่มปิด */
 .cart__close {
   font-size: 2rem;
   color: var(--title-color);
@@ -280,33 +294,52 @@ input {
   top: 1.25rem;
   right: 0.9rem;
   cursor: pointer;
+  transition: color 0.3s; /* เพิ่มการเปลี่ยนสีเมื่อ hover */
 }
 
+.cart__close:hover {
+  color: var(--first-color); /* เปลี่ยนสีเมื่อ hover */
+}
+
+/* กริดสำหรับสินค้า */
 .cart__container {
   display: grid;
   row-gap: 1.5rem;
 }
 
+/* รายการสินค้า */
 .cart__card {
   display: flex;
   align-items: center;
   column-gap: 1rem;
+  padding: 0.75rem; /* เพิ่มระยะ padding */
+  border-radius: 5px; /* เพิ่มมุมโค้ง */
+  background-color: var(--container-color);
+  transition: background 0.3s; /* เพิ่มเอฟเฟกต์เมื่อ hover */
 }
 
+.cart__card:hover {
+  background-color: rgba(0, 0, 0, 0.05); /* เปลี่ยนสีเมื่อ hover */
+}
+
+/* ข้อมูลของสินค้า */
 .cart__box {
-  background-color: var(--container-color);
   padding: 1rem 1.25rem;
   display: flex;
   align-items: center;
 }
 
+/* รูปภาพสินค้า */
 .cart_img {
   width: 90px;
+  border-radius: 5px; /* เพิ่มมุมโค้ง */
 }
 
+/* ชื่อและราคา */
 .cart_title {
   font-size: var(--normal-font-size);
   margin-bottom: var(--mb-0-5);
+  font-weight: bold; /* ทำให้ชื่อสินค้าเด่นขึ้น */
 }
 
 .cart_price {
@@ -316,6 +349,7 @@ input {
   margin-bottom: var(--mb-1-5);
 }
 
+/* จำนวนสินค้า */
 .cart__amount,
 .cart__amount-content {
   display: flex;
@@ -330,19 +364,28 @@ input {
   column-gap: 1rem;
 }
 
+/* การจัดการจำนวนสินค้า */
 .cart__amount-box {
   display: inline-flex;
   padding: 0.25rem;
   background: var(--container-color);
   cursor: pointer;
+  border-radius: 5px; /* เพิ่มมุมโค้ง */
+  transition: background 0.3s; /* เอฟเฟกต์เมื่อ hover */
 }
 
+.cart__amount-box:hover {
+  background: rgba(0, 0, 0, 0.1); /* เปลี่ยนสีเมื่อ hover */
+}
+
+/* ถังขยะสำหรับลบสินค้า */
 .cart__amount-trash {
   font-size: 1.15rem;
   color: var(--first-color);
   cursor: pointer;
 }
 
+/* ราคาสินค้า */
 .cart__prices {
   margin-top: 6rem;
   display: flex;
@@ -350,18 +393,41 @@ input {
   justify-content: space-between;
 }
 
+/* สีสำหรับราคาสินค้า */
 .cart__prices-item,
 .cart__prices-total {
   color: var(--title-color);
 }
 
 .cart__prices-item {
-  font: var(--small-font-size);
+  font-size: var(--small-font-size);
 }
 
 .cart__prices-total {
   font-size: var(--h3-font-size);
   font-weight: var(--font-medium);
+}
+
+/* สไตล์สำหรับ container ที่แสดงสินค้าที่เพิ่มเข้ามา */
+.cartcontainer {
+  max-height: 300px; /* หรือปรับตามขนาดที่ต้องการ */
+  overflow-y: auto; /* แสดงแถบเลื่อนแนวตั้งเมื่อเกินขนาดที่กำหนด */
+  padding-right: 10px; /* เพิ่มช่องว่างสำหรับ scrollbar */
+  border-radius: 5px; /* เพิ่มมุมโค้ง */
+}
+
+/* สไตล์ scrollbar */
+.cartcontainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cartcontainer::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+.cartcontainer::-webkit-scrollbar-thumb:hover {
+  background-color: #999;
 }
 
 /*========== Show Cart ==========*/
@@ -939,7 +1005,7 @@ input {
 
 /*========== Cart page ==========*/
 
-.cart__container {
+.ห {
   display: grid;
   grid-template-columns: 250px 2fr; /* กำหนดความกว้างของ sidebar เป็น 250px และ shop content กินพื้นที่ที่เหลือ */
   column-gap: 1.8rem; /* ช่องว่างระหว่าง sidebar และ shop content */
@@ -962,6 +1028,100 @@ input {
   background-color: var(--container-color);
   padding: 20px;
   border-left: 1px solid #ddd;
+}
+
+/*==========  Order Button ==========*/
+.link_wrapper {
+  margin-top: var(--mb-1-5);
+  position: relative;
+}
+
+.custom-link {
+  display: inline-block; /* ใช้ inline-block แทน block */
+  width: 250px; /* กำหนดความกว้างเริ่มต้น */
+  height: 50px; /* กำหนดความสูงเริ่มต้น */
+  line-height: 50px; /* ให้ข้อความอยู่กลางปุ่ม */
+  font-weight: bold;
+  text-decoration: none;
+  background: #333;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 3px solid #333;
+  border-radius: 5px; /* ทำมุมให้โค้งเล็กน้อย */
+  transition: all 0.35s;
+}
+
+.custom-link:hover {
+  width: 100px; /* ความกว้างตอน hover */
+  height: 70px; /* ความสูงให้เหมือนเดิม */
+  border: 3px solid #2ecc71;
+  background: transparent;
+  color: #2ecc71;
+  border-radius: 20%; /* เปลี่ยนให้เป็นวงกลม */
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  border: 3px solid transparent;
+  position: absolute;
+  transform: rotate(0deg);
+  right: 0;
+  top: 0;
+  z-index: 1;
+  transition: all 0.35s;
+}
+
+.custom-link:hover + .icon {
+  right: -10%;
+}
+
+.custom-link:hover ~ .loading-bar {
+  display: block;
+  width: 100%; /* ขยายแถบบรรทุกเต็มเมื่อ hover */
+}
+
+.hidden {
+  display: none;
+}
+
+#success-message {
+  position: fixed; /* ใช้ position fixed เพื่อให้มันอยู่กลางจอ */
+  top: 50%; /* ย้ายไปครึ่งหนึ่งของความสูง */
+  left: 50%; /* ย้ายไปครึ่งหนึ่งของความกว้าง */
+  transform: translate(-50%, -50%); /* ปรับให้มันอยู่ตรงกลาง */
+  z-index: 999; /* ให้มันอยู่เหนือ overlay */
+  text-align: center; /* จัดข้อความให้อยู่กลาง */
+  color: white; /* สีข้อความ */
+  font-size: 1.5rem; /* ปรับขนาดตัวอักษรตามต้องการ */
+}
+
+.truck-animation {
+  width: 250px; /* ปรับขนาด GIF ตามต้องการ */
+  margin-bottom: 100px; /* เพิ่มระยะห่างระหว่างภาพกับข้อความ */
+}
+
+
+@keyframes truckMove {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%); /* ปรับตามขนาดที่ต้องการ */
+  }
+}
+
+.body-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* สีดำโปร่งแสง */
+  z-index: 998; /* ให้แสดงอยู่ใต้ success-message */
+  display: none; /* เริ่มต้นซ่อน */
 }
 
 /*========== Responsive2  ==========*/

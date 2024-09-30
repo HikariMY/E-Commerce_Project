@@ -9,139 +9,125 @@ var homeSwiper = new Swiper(".home-swiper", {
   },
 
   autoplay: {
-    delay: 3000,  // กำหนดเวลาระหว่างสไลด์ (1000 = 1 วินาที)
-    disableOnInteraction: false,  // ให้สไลด์เลื่อนต่อไปแม้ผู้ใช้จะคลิกหรือแตะที่สไลด์
+    delay: 3000,
+    disableOnInteraction: false,
   },
 });
 
-
-/*========== เพิมแถบเลื่อนตอนจอหด ==========*/
-function scrollHeader(){
-    const header = document.getElementById('header')
-    //ถ้าViewpointมากกว่า50จะเปลี่ยนส่วนของ็ำฟกำพ
-    if(this.scrollY >= 50) header.classList.add('scroll-header'); else header.classList.remove('scroll-header')
+/*========== เพิ่มแถบเลื่อนตอนจอหด ==========*/
+function handleScroll() {
+  const header = document.getElementById('header');
+  if (window.scrollY >= 50) {
+    header.classList.add('scroll-header');
+  } else {
+    header.classList.remove('scroll-header');
+  }
 }
-window.addEventListener('scroll',scrollHeader)
+window.addEventListener('scroll', handleScroll);
 
 /*========== New Swiper ==========*/
 var newSwiper = new Swiper(".new-swiper", {
   spaceBetween: 18,
-  centeredSlide: true,
+  centeredSlides: true,
   slidesPerView: "auto",
   loop: true,
 
   autoplay: {
-    delay: 3000,  // กำหนดเวลาระหว่างสไลด์ (1000 = 1 วินาที)
-    disableOnInteraction: false,  // ให้สไลด์เลื่อนต่อไปแม้ผู้ใช้จะคลิกหรือแตะที่สไลด์
+    delay: 3000,
+    disableOnInteraction: false,
   },
 });
 
 /*========== Show Cart ==========*/
 const cart = document.getElementById('cart'),
       cartShop = document.getElementById('cart-shop'),
-      cartClose = document.getElementById('cart-close')
+      cartClose = document.getElementById('cart-close');
 
-/*==========  Cart show ==========*/
-if(cartShop){
-  cartShop.addEventListener("click", () => {
-    cart.classList.add('show-cart')
-  })
+/*========== Cart show ==========*/
+if (cartShop) {
+  cartShop.addEventListener("click", () => cart.classList.add('show-cart'));
 }
 
-/*==========  Cart close ==========*/
-if(cartClose){
-  cartClose.addEventListener("click", () => {
-    cart.classList.remove('show-cart')
-  })
+/*========== Cart close ==========*/
+if (cartClose) {
+  cartClose.addEventListener("click", () => cart.classList.remove('show-cart'));
 }
 
-/*========== Show login ==========*/
+/*========== Show Login ==========*/
 const login = document.getElementById('login'),
       loginButton = document.getElementById('login-toggle'),
-      loginClose = document.getElementById('login-close')
+      loginClose = document.getElementById('login-close');
 
-/*==========  Login show ==========*/
-if(loginButton){
-  loginButton.addEventListener("click", () => {
-    login.classList.add('show-login')
-  })
+/*========== Login show ==========*/
+if (loginButton) {
+  loginButton.addEventListener("click", () => login.classList.add('show-login'));
 }
 
-/*==========  Cart close ==========*/
-if(loginClose){
-  loginClose.addEventListener("click", () => {
-    login.classList.remove('show-login')
-  })
+/*========== Login close ==========*/
+if (loginClose) {
+  loginClose.addEventListener("click", () => login.classList.remove('show-login'));
 }
 
-/*==========  Show Scroll Up ==========*/
-function scrollUP(){
+/*========== Show Scroll Up ==========*/
+function handleScrollUp() {
   const scrollUp = document.getElementById('scroll-up');
-
-  if(this.scrollY >= 350 ) scrollUP.classList.add('show-scrollup'); else scrollUP.classList.remove('show-scrollup')
+  if (window.scrollY >= 350) {
+    scrollUp.classList.add('show-scrollup');
+  } else {
+    scrollUp.classList.remove('show-scrollup');
+  }
 }
-window.addEventListener('scroll', scrollUP)
+window.addEventListener('scroll', handleScrollUp);
 
-/*==========  Show Menu ==========*/
+/*========== Show Menu ==========*/
 const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close')
+      navClose = document.getElementById('nav-close');
 
-/*==========  Cart close ==========*/
-if(navToggle){
-  navToggle.addEventListener("click", () => {
-    navMenu.classList.add('show-menu')
-  })
+/*========== Menu show/close ==========*/
+if (navToggle) {
+  navToggle.addEventListener("click", () => navMenu.classList.add('show-menu'));
+}
+if (navClose) {
+  navClose.addEventListener("click", () => navMenu.classList.remove('show-menu'));
 }
 
-if(navClose){
-  navClose.addEventListener("click", () => {
-    navMenu.classList.remove('show-menu')
-  })
-}
-
-/*==========  Book Filter ==========*/
-document.addEventListener('DOMContentLoaded', function () {
-  // เลือก input ทั้งหมดที่เป็น category filter
+/*========== Book Filter ==========*/
+document.addEventListener('DOMContentLoaded', () => {
   const filters = document.querySelectorAll('.category-filter');
 
-  // เพิ่ม event listener เมื่อมีการเปลี่ยนแปลงการติ๊ก checkbox
   filters.forEach(filter => {
-      filter.addEventListener('change', function () {
-          filterBooks();
-      });
+    filter.addEventListener('change', filterBooks);
   });
 
   function filterBooks() {
-      // ดึงค่าประเภทที่เลือก
-      const activeFilters = Array.from(filters)
-          .filter(filter => filter.checked)
-          .map(filter => filter.value);
+    const activeFilters = Array.from(filters)
+      .filter(filter => filter.checked)
+      .map(filter => filter.value);
 
-      // เลือกหนังสือทั้งหมด
-      const books = document.querySelectorAll('.book-item');
+    const books = document.querySelectorAll('.book-item');
 
-      books.forEach(book => {
-          // ดึงประเภทหนังสือจาก data-category และแยกเป็นอาเรย์
-          const categories = book.getAttribute('data-category').split(',');
+    books.forEach(book => {
+      const categories = book.getAttribute('data-category').split(',');
 
-          // แสดงหรือซ่อนหนังสือตามประเภทที่เลือก
-          if (activeFilters.length === 0 || activeFilters.some(filter => categories.includes(filter))) {
-              book.style.display = 'block';  // แสดงหนังสือ
-          } else {
-              book.style.display = 'none';  // ซ่อนหนังสือ
-          }
-      });
+      if (activeFilters.length === 0 || activeFilters.some(filter => categories.includes(filter))) {
+        book.style.display = 'block';
+      } else {
+        book.style.display = 'none';
+      }
+    });
   }
-  // เรียกใช้ฟังก์ชันกรองหนังสือเมื่อโหลดหน้าเว็บครั้งแรก
+
   filterBooks();
 });
 
-/*==========  Add Crats ==========*/
+
+
+/*========== เพิ่มสินค้าลงตะกร้า ==========*/
 let cartItems = [];
 let totalAmount = 0;
 
-function addToCart(productName, price) {
+function addToCart(productName, price, image) {
     // ค้นหาว่าสินค้าอยู่ในตะกร้าแล้วหรือไม่
     const existingItem = cartItems.find(item => item.name === productName);
 
@@ -155,26 +141,127 @@ function addToCart(productName, price) {
             name: productName,
             price: price,
             quantity: 1,
-            totalPrice: price
+            totalPrice: price,
+            image: image  // เก็บภาพสินค้า
         });
     }
 
     // เพิ่มราคารวม
     totalAmount += price;
-    displayCart();
+    displayCart();  // อัปเดตตะกร้า
 }
 
+/*========== แสดงสินค้าตะกร้า ==========*/
 function displayCart() {
     const cartItemsContainer = document.getElementById('cart-items');
-    cartItemsContainer.innerHTML = ''; // ล้างข้อมูลเดิม
+    cartItemsContainer.innerHTML = ''; // ล้างข้อมูลเก่าก่อน
 
-    cartItems.forEach(item => {
-        const cartItem = document.createElement('p');
-        cartItem.textContent = `${item.name} x ${item.quantity} - ฿${item.totalPrice}`;
+    cartItems.forEach((item, index) => {
+        const cartItem = document.createElement('div');
+        cartItem.classList.add('cart__card');
+        cartItem.innerHTML = `
+            <div class="cart__box">
+                <img src="${item.image}" alt="${item.name}" class="cart_img">
+            </div>
+            <div class="cart__details">
+                <h3 class="cart_title">${item.name}</h3>
+                <span class="cart_price">฿${item.totalPrice.toFixed(2)}</span>
+                <div class="cart__amount">
+                    <div class="cart__amount-content">
+                        <span class="cart__amount-box" onclick="decreaseQuantity(${index})">
+                            <i class="bx bx-minus"></i>
+                        </span>
+                        <span class="cart__amount-number">${item.quantity}</span>
+                        <span class="cart__amount-box" onclick="increaseQuantity(${index})">
+                            <i class="bx bx-plus"></i>
+                        </span>
+                    </div>
+                    <i class="bx bx-trash-alt cart__amount-trash" onclick="removeProduct(${index})"></i>
+                </div>
+            </div>
+        `;
         cartItemsContainer.appendChild(cartItem);
     });
 
     // อัปเดตราคารวม
-    document.getElementById('total-price').textContent = totalAmount;
+    document.getElementById('total-price').textContent = `฿${totalAmount.toFixed(2)}`;
 }
+
+/*========== เพิ่มจำนวนสินค้า ==========*/
+function increaseQuantity(index) {
+    const item = cartItems[index];
+    item.quantity += 1;
+    item.totalPrice += item.price;
+    totalAmount += item.price;
+    displayCart();
+}
+
+/*========== ลดจำนวนสินค้า ==========*/
+function decreaseQuantity(index) {
+    const item = cartItems[index];
+    if (item.quantity > 1) {
+        item.quantity -= 1;
+        item.totalPrice -= item.price;
+        totalAmount -= item.price;
+        displayCart();
+    }
+}
+
+/*========== ลบสินค้าออกจากตะกร้า ==========*/
+function removeProduct(index) {
+    const item = cartItems[index];
+    totalAmount -= item.totalPrice;
+    cartItems.splice(index, 1);  // ลบสินค้าจากตะกร้า
+    displayCart();
+}
+
+
+
+document.getElementById("checkout-button").addEventListener("click", function() {
+  // แสดง overlay
+  document.getElementById("body-overlay").style.display = "block";
+  
+  // แสดงข้อความสำเร็จ
+  document.getElementById("success-message").classList.remove("hidden");
+  
+  // สามารถซ่อนถ้าต้องการให้หายไปหลังจากเวลาหนึ่ง
+  setTimeout(() => {
+      document.getElementById("success-message").classList.add("hidden");
+      document.getElementById("body-overlay").style.display = "none"; // ซ่อน overlay
+  }, 2000); // แสดงเป็นเวลา 3 วินาที
+});
+
+document.getElementById('checkout-button').addEventListener('click', function() {
+  // ซ่อน icon
+  document.getElementById('icon').style.display = 'none';
+
+  // แสดงข้อความสั่งซื้อเสร็จสิ้น
+  document.getElementById('success-message').classList.remove('hidden');
+
+  // แสดง overlay
+  document.getElementById('body-overlay').style.display = 'block';
+
+  // เคลียร์สินค้าออกจาก My Cart
+  const cartItemsContainer = document.getElementById('cart-items');
+  
+  // เช็คว่าตะกร้ามีสินค้าอยู่หรือไม่
+  if (cartItemsContainer.innerHTML) {
+      cartItemsContainer.innerHTML = ''; // ลบทุกอย่างใน container
+      document.getElementById('cart-items-count').innerText = '0 items'; // อัปเดตจำนวนสินค้า
+      document.getElementById('total-price').innerText = '฿0.00'; // อัปเดตราคาทั้งหมด
+  }
+});
+
+document.getElementById('checkout-button').addEventListener('click', function() {
+  console.log("Button clicked"); // เช็คว่ากดปุ่มแล้ว
+  const cartItemsContainer = document.getElementById('cart-items');
+
+  if (cartItemsContainer.innerHTML) {
+      console.log("Clearing cart items"); // เช็คว่ามีสินค้าหรือไม่
+      cartItemsContainer.innerHTML = ''; // เคลียร์สินค้า
+      document.getElementById('cart-items-count').innerText = '0 items'; // อัปเดตจำนวนสินค้า
+      document.getElementById('total-price').innerText = '฿0.00'; // อัปเดตราคาทั้งหมด
+  }
+});
+
 

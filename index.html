@@ -71,100 +71,28 @@
     </header>
 
     <!-- =============== Cart =============== -->
-    <div class="cart " id="cart">
+    <div class="cart" id="cart">
         <i class="bx bx-x cart__close" id="cart-close"></i>
-
         <h2 class="cart__title-center">My Cart</h2>
-
-        <div class="cartcontainer">
-            <article class="cart__card">
-                <div class="cart__box">
-                    <img src="/assets/image/cart1.jpg" alt="" class="cart_img">
-                </div>
-
-                <div class="cart__details">
-                    <h3 class="cart_title">รุ่นน้องตัวป่วนอยากชวนเที่ยวเล่น เล่ม 08</h3>
-                    <span class="cart_price">฿76.00</span>
-
-                    <div class="cart__amount">
-                        <div class="cart__amount-content">
-                            <span class="cart__amount-box">
-                                <i class="bx bx-minus"></i>
-                            </span>
-
-                            <span class="cart__amount-number">1</span>
-
-                            <span class="cart__amount-box"></span>
-                            <i class="bx bx-plus"></i>
-                            </span>
-
-                        </div>
-
-                        <i class="bx bx-trash-alt cart__amount-trash"></i>
-                    </div>
-                </div>
-            </article>
-
-            <article class="cart__card">
-                <div class="cart__box">
-                    <img src="/assets/image/cart2.jpg" alt="" class="cart_img">
-                </div>
-
-                <div class="cart__details">
-                    <h3 class="cart_title">ทาสสุดแกร่งแห่งหน่วยป้องกันอสูร slave เล่ม 14 </h3>
-                    <span class="cart_price">฿149.00</span>
-
-                    <div class="cart__amount">
-                        <div class="cart__amount-content">
-                            <span class="cart__amount-box">
-                                <i class="bx bx-minus"></i>
-                            </span>
-
-                            <span class="cart__amount-number">1</span>
-
-                            <span class="cart__amount-box"></span>
-                            <i class="bx bx-plus"></i>
-                            </span>
-
-                        </div>
-
-                        <i class="bx bx-trash-alt cart__amount-trash"></i>
-                    </div>
-                </div>
-            </article>
-
-            <article class="cart__card">
-                <div class="cart__box">
-                    <img src="/assets/image/cart3.jpg" alt="" class="cart_img">
-                </div>
-
-                <div class="cart__details">
-                    <h3 class="cart_title">สองสิงห์อมควันหลังซูเปอร์มาร์เก็ต เล่ม 3 </h3>
-                    <span class="cart_price">฿159.00</span>
-
-                    <div class="cart__amount">
-                        <div class="cart__amount-content">
-                            <span class="cart__amount-box">
-                                <i class="bx bx-minus"></i>
-                            </span>
-
-                            <span class="cart__amount-number">1</span>
-
-                            <span class="cart__amount-box"></span>
-                            <i class="bx bx-plus"></i>
-                            </span>
-
-                        </div>
-
-                        <i class="bx bx-trash-alt cart__amount-trash"></i>
-                    </div>
-                </div>
-            </article>
+    
+        <div class="cartcontainer" id="cart-items">
+            <!-- สินค้าจะถูกแสดงในส่วนนี้ผ่าน JavaScript -->
         </div>
-
+    
         <div class="cart__prices">
-            <span class="cart__prices-item">3 item</span>
-            <span class="cart__prices-total">Total 383฿</span>
+            <span class="cart__prices-item" id="cart-items-count">0 items</span>
+            <span class="cart__prices-total">Total: <span id="total-price">฿0.00</span></span>
+        </div>
+    
+        <div class="link_wrapper">
+            <button class="custom-link" id="checkout-button">สั่งซื้อ</button> <a href="cart.html"></a>
+        </div>
+    
+        <div class="body-overlay" id="body-overlay"></div> <!-- พื้นหลังสีดำ -->
+    
+        <div id="success-message" class="hidden">
+            <img src="assets/image/truck.gif" alt="Truck Animation" class="truck-animation" />
+            
         </div>
     </div>
 
