@@ -43,9 +43,6 @@
                     <li class="nav__item">
                         <a href="about.html" class="nav__link">About Us</a>
                     </li>
-                    <li class="nav__item">
-                        <a href="contact.html" class="nav__link">Contact Us</a>
-                    </li>
                 </ul>
 
                 <div class="nav__close" id="nav-close">
@@ -131,7 +128,8 @@
             <div class="shop__items grid">
                 <div class="shop__content grid">
                     <div class="shop__content book-item" data-category="manga,act">
-                        <img src="assets/image/bs1.jpg" alt="" class="shop__img">
+                        <img src="assets/image/bs1.jpg" alt="" class="shop__img"
+                            onclick="openModal('ตำนานดาบและคทาแห่งวิสตอเรีย เล่ม 7', 'assets/image/bs1.jpg', 'ผู้แต่ง:Fujino Omori / Toshi Aoi', '100.00฿')">
                         <h3 class="shop__title">ตำนานดาบและคทาแห่งวิสตอเรีย เล่ม 7</h3>
                         <span class="shop__subtitle">มังงะ</span>
                         <div class="shop__price">
@@ -144,7 +142,8 @@
                 </div>
                 <div class="shop__content grid">
                     <div class="shop__content book-item" data-category="manga,act">
-                        <img src="assets/image/bs2.jpg" alt="" class="shop__img">
+                        <img src="assets/image/bs2.jpg" alt="" class="shop__img"
+                        onclick="openModal('ทาสรักสังเวียนเถื่อน เล่ม 1', 'assets/image/bs2.jpg', 'ผู้แต่ง:ไซโซ ฮาราวาตะ', '100.00฿')">
                         <h3 class="shop__title">ทาสรักสังเวียนเถื่อน เล่ม 1</h3>
                         <span class="shop__subtitle">มังงะ</span>
 
@@ -579,6 +578,15 @@
             <p>&copy; 2024 Book SleepWalker. All rights reserved.</p>
         </span>
     </footer>
+
+    <!-- Modal สำหรับแสดงรายละเอียดสินค้า -->
+    <div id="product-modal" class="modal">
+        <span class="close" id="modal-close">&times;</span>
+        <img id="modal-img" class="modal-content" alt="Product Image">
+        <div id="modal-title" class="modal-title"></div>
+        <div id="modal-description" class="modal-description"></div>
+        <div id="modal-price" class="modal-price"></div>
+    </div>
 
     <!-- ===============Scroll Up =============== -->
     <a href="" class="scrollup" id="scroll-up">

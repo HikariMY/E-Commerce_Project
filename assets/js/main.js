@@ -265,3 +265,31 @@ document.getElementById('checkout-button').addEventListener('click', function() 
 });
 
 
+function openModal(title, imgSrc, description, price) {
+  document.getElementById('modal-title').textContent = title;
+  document.getElementById('modal-img').src = imgSrc;
+  document.getElementById('modal-description').textContent = description;
+  document.getElementById('modal-price').textContent = price;
+
+  // แสดง modal
+  document.getElementById('product-modal').style.display = 'block';
+}
+
+// ปิด modal
+document.getElementById('modal-close').onclick = function() {
+  document.getElementById('product-modal').style.display = 'none';
+}
+
+// ปิด modal เมื่อคลิกนอก modal
+window.onclick = function(event) {
+  const modal = document.getElementById('product-modal');
+  if (event.target === modal) {
+      modal.style.display = 'none';
+  }
+}
+
+
+
+
+
+

@@ -974,6 +974,59 @@ input {
   right: 0;
 }
 
+
+.modal {
+  display: none; /* ซ่อน modal */
+  position: fixed; 
+  z-index: 1; /* อยู่ด้านบนสุด */
+  left: 0;
+  top: 0;
+  width: 100%; /* เต็มหน้าจอ */
+  height: 100%; /* เต็มหน้าจอ */
+  overflow: auto; /* เพิ่ม scroll bar ถ้าจำเป็น */
+  background-color: rgba(0, 0, 0, 0.5); /* พื้นหลังเป็นสีดำ */
+}
+
+.modal-content {
+  margin: 5% auto; /* ขยายกลางหน้าจอ */
+  display: block;
+  max-width: 90%; /* ความกว้างสูงสุดของภาพ */
+  height: auto; /* ความสูงอัตโนมัติ */
+  border-radius: 0.5rem; /* มุมโค้ง */
+}
+
+.modal-title {
+  color: white; /* สีของชื่อสินค้า */
+  font-size: 1.5rem; /* ขนาดฟอนต์ */
+  text-align: center; /* จัดกลาง */
+  margin: 1rem 0; /* ช่องว่างรอบๆ */
+}
+
+.modal-description {
+  color: white; /* สีของรายละเอียด */
+  font-size: 1rem; /* ขนาดฟอนต์ */
+  text-align: center; /* จัดกลาง */
+  margin: 1rem 0; /* ช่องว่างรอบๆ */
+}
+
+.modal-price {
+  color: white; /* สีของราคา */
+  font-size: 1.25rem; /* ขนาดฟอนต์ */
+  text-align: center; /* จัดกลาง */
+  margin-bottom: 1rem; /* ช่องว่างด้านล่าง */
+}
+
+.close {
+  color: white; /* สีของปุ่มปิด */
+  float: right;
+  font-size: 28px; /* ขนาดของปุ่มปิด */
+  font-weight: bold;
+  margin: 10px; /* ช่องว่างรอบๆ */
+}
+
+
+
+
 /*========== Pagination  ==========*/
 .pagination {
   display: flex;
@@ -1005,7 +1058,7 @@ input {
 
 /*========== Cart page ==========*/
 
-.ห {
+.s {
   display: grid;
   grid-template-columns: 250px 2fr; /* กำหนดความกว้างของ sidebar เป็น 250px และ shop content กินพื้นที่ที่เหลือ */
   column-gap: 1.8rem; /* ช่องว่างระหว่าง sidebar และ shop content */
@@ -1124,6 +1177,43 @@ input {
   display: none; /* เริ่มต้นซ่อน */
 }
 
+
+/*========== About Us ==========*/
+.about__container{
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 7rem;
+}
+
+.about__img{
+  width: 380px;
+  justify-self: center;
+}
+
+.about__title{
+  margin-bottom: var(--mb-1);
+  text-align: left;
+}
+
+.about__description{
+  margin-bottom: var(--mb-2);
+}
+
+.about__detail{
+  display: grid;
+  row-gap: 1rem;
+}
+
+.about__detils-description {
+  display: inline-flex;
+  column-gap: .5rem;
+  font-size: var(--small-font-size);
+}
+
+.about__details-icon{
+  font-size: 1rem;
+  color: var(--first-color);
+}
+
 /*========== Responsive2  ==========*/
 @media screen and (max-width: 1200px) {
   .home__img {
@@ -1218,6 +1308,14 @@ input {
   .shop__title {
     font-size: var(--normal-font-size);
   }
+
+  .about__container{
+    column-gap: 4rem;
+  }
+
+  .about__img{
+    width: 280px;
+  }
 }
 @media screen and (max-width: 767px) {
   body {
@@ -1303,6 +1401,11 @@ input {
 
   .pagination {
     justify-content: center;
+  }
+
+  .about__container{
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
   }
 
   .footer__container {
